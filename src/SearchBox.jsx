@@ -2,6 +2,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import "./SearchBox.css"
 import { useState } from 'react';
+import { API_CONFIG } from './config';
 
 export default function SearchBox({ updateInfo }) {
     let [city, setCity] = useState("");
@@ -19,8 +20,7 @@ export default function SearchBox({ updateInfo }) {
             setCity(""); 
         }
     }
-    let API_URL ="http://api.openweathermap.org/geo/1.0/direct";
-    let API_KEY ="64aa36f8b6f6c05d3f61e77432ca7ee5";
+
     
 
     let getWeatherInfo = async () => {
@@ -32,7 +32,7 @@ export default function SearchBox({ updateInfo }) {
                 return null;
             }
 
-            let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}`);
+            let response = await fetch(`${API_CONFIG.GEOCODING_URL}?q=${city}&appid=${API_CONFIG.API_KEY}`);
             let jsonResponse = await response.json();
 
             if (!jsonResponse || jsonResponse.length === 0) {
@@ -44,7 +44,7 @@ export default function SearchBox({ updateInfo }) {
             let lon = jsonResponse[0].lon;
 
             let weatherInfo = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+                `${API_CONFIG.WEATHER_URL}?lat=${lat}&lon=${lon}&appid=${API_CONFIG.API_KEY}&units=metric`
             );
             let jsonWeather = await weatherInfo.json();
 

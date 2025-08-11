@@ -4,17 +4,20 @@ A modern, responsive weather application built with React that provides real-tim
 
 ## ✨ Features
 
-- **🔍 City Search**: Search for any city globally with instant results
+- **🔍 Smart City Search**: Search for any city globally with instant results and recent search history
 - **🌡️ Comprehensive Weather Data**: 
-  - Current temperature
-  - Feels like temperature
+  - Current temperature with feels-like temperature
   - Minimum and maximum temperatures
-  - Humidity levels
-  - Weather description
-- **🖼️ Dynamic Backgrounds**: Beautiful, responsive background images that change based on weather conditions
-- **📱 Responsive Design**: Modern UI that works seamlessly on all devices
+  - Humidity levels and atmospheric pressure
+  - Wind speed and direction with compass readings
+  - Visibility and weather description
+  - Sunrise and sunset times
+- **📊 5-Day Forecast**: Extended weather predictions with interactive cards
+- **🎨 Modern Material-UI Design**: Beautiful, responsive interface with custom theming
+- **📱 Responsive Design**: Optimized for all devices with adaptive layouts
 - **⚡ Real-time Updates**: Live weather data from OpenWeatherMap API
-- **🎯 Error Handling**: User-friendly error messages and validation
+- **🎯 Enhanced UX**: Loading skeletons, error handling, and smooth animations
+- **🌍 Global Coverage**: Support for cities worldwide with country information
 
 ## 🛠️ Built With
 
